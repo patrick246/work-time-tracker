@@ -1,0 +1,30 @@
+<h1>Time Tracker</h1>
+<div class="info">
+	{{info}}
+</div>
+<div class="buttons">
+	<button type="button" class="start" (click)="onClick('start')" *ngIf="shouldShowStart()">Start</button>
+	<button type="button" class="pause" (click)="onClick('pause-begin')" *ngIf="shouldShowPauseStart()">Pause Anfang</button>
+	<button type="button" class="pause" (click)="onClick('pause-end')" *ngIf="shouldShowPauseEnd()">Pause Ende</button>
+	<button type="button" class="end" (click)="onClick('end')" *ngIf="shouldShowEnd()">Ende</button>
+</div>
+<ul>
+	<li *ngIf="today.hasOwnProperty('startTime')">
+		<div>
+			<h3>Start</h3>
+			<p>{{today.startTime | date:'dd.MM.yy HH:mm'}}</p>
+		</div>
+	</li>
+	<li *ngFor="let pause of today.pauses">
+		<div>
+			<h3>Pause</h3>
+			<p>{{pause.startTime | date:'dd.MM.yy HH:mm'}} - {{pause.endTime | date:'dd.MM.yy HH:mm'}}</p>
+		</div>
+	</li>
+	<li *ngIf="today.hasOwnProperty('endTime')">
+		<div>
+			<h3>Ende</h3>
+			<p>{{today.endTime | date:'dd.MM.yy HH:mm'}}</p>
+		</div>
+	</li>
+</ul>

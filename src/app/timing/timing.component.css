@@ -1,0 +1,95 @@
+h1 {
+	font-family: sans-serif;
+	font-weight: lighter;
+	font-size: 28pt;
+	margin: 0;
+	padding: 16px 16px;
+
+	background-color: #1565c0;
+	color: white;
+
+	position: sticky;
+	top: 0;
+	left: 0;
+}
+
+.info {
+	background-color: #003c8f;
+	padding: 64px 16px;
+	font-family: sans-serif;
+	font-weight: lighter;
+	font-size: 18pt;
+	color: white;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+
+	background-color: #E1e2e1;
+
+	padding: 16px;
+
+	position: sticky;
+	top: 75px;
+}
+
+.buttons button {
+	border: none;
+	border-radius: 4px;
+	background-color: #1565c0;
+	color: white;
+
+	padding: 16px 8px;
+	margin: 8px;
+
+	flex-grow: 1;
+}
+
+.buttons button.start {
+	background-color: #00600f;
+}
+
+.buttons button.pause {
+	background-color: #fbc02d;
+}
+
+.buttons button.end {
+	background-color: #d32f2f;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul li {
+	display: flex;
+	justify-content: flex-start;
+
+	padding: 4px 16px;
+}
+
+ul li:not(:last-of-type) {
+	border-bottom: 1px solid rgba(0,0,0,.45);
+}
+
+ul li h3 {
+	text-transform: capitalize;
+
+	font-family: sans-serif;
+	font-weight: lighter;
+	font-size: 18pt;
+}
+
+ul li button {
+	border: none;
+	font-size: 18pt;
+	padding: 16px;
+	background-color: transparent;
+}
+
+.spacer {
+	flex-grow: 1;
+}
