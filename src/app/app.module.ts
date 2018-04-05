@@ -9,12 +9,14 @@ import {EntriesService} from "./entries.service";
 import {ServiceWorkerModule} from "@angular/service-worker";
 import {environment} from "../environments/environment";
 import {InfoService} from "./info.service";
+import { HistoryComponent } from './history/history.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		TimingComponent
+		TimingComponent,
+		HistoryComponent
 	],
 	imports: [
 		BrowserModule,

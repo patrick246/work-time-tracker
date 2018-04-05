@@ -59,6 +59,6 @@ export class InfoService {
 		}
 		const endTime = new Date(new Date(day.startTime).getTime() + InfoService.DEFAULT_WORKDAY_TIME + pauseSums);
 
-		return `Projected End time: ${endTime.getHours()}:${endTime.getMinutes()}`;
+		return `Projected End time: ${("0" + endTime.getHours()).slice(-2)}:${("0" + endTime.getMinutes()).slice(-2)}`;
 	}
 }

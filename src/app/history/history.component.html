@@ -1,0 +1,31 @@
+<div class="info">
+	Balance: {{totalOvertime.toPrecision(3)}}h
+</div>
+<table>
+	<tr>
+		<th>Datum</th>
+		<th>Start</th>
+		<th>Ende</th>
+		<th>Zeit</th>
+		<th>Pause</th>
+	</tr>
+	<tr *ngFor="let day of days">
+		<td>{{day.date | date:'dd.MM.yy'}}</td>
+		<td>
+			<ng-container *ngIf="day.startTime else noStartTime">
+				{{day.startTime | date:'HH:mm'}}
+			</ng-container>
+			<ng-template #noStartTime>-</ng-template>
+		</td>
+		<td>
+			<ng-container *ngIf="day.endTime else noEndTime">
+				{{day.endTime | date:'HH:mm'}}
+			</ng-container>
+			<ng-template #noEndTime>-</ng-template>
+		</td>
+		<td>
+			<ng-container *ngIf="day.endTime else noEndTime">{{calculateWorkTime(day).toPrecision(2)}}h</ng-container>
+		</td>
+		<td>{{calculatePauseTime(day)}}min</td>
+	</tr>
+</table>
